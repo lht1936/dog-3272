@@ -245,10 +245,20 @@ class TrafficMonitor: ObservableObject {
     }
     
     private func loadHistory() {
+        let fileManager = FileManager.default
+        
+        // 检查文件是否存在
+        guard fileManager.fileExists(atPath: historyFileURL.path) else {
+            // 文件不存在（首次运行），直接返回空数组，不打印错误
+            historyTraffic = []
+            return
+        }
+        
         do {
             let data = try Data(contentsOf: historyFileURL)
             historyTraffic = try JSONDecoder().decode([AppTrafficHistory].self, from: data)
         } catch {
+            // 文件存在但读取失败时才打印错误
             print("Error loading history: \(error)")
             historyTraffic = []
         }
