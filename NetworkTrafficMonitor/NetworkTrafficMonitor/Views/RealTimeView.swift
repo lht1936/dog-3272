@@ -11,8 +11,7 @@ struct RealTimeView: View {
             // 顶部控制栏
             HStack {
                 Text("实时网络流量监控")
-                    .font(.title)
-                    .fontWeight(.bold)
+                    .font(.system(size: 28, weight: .bold))
                 
                 Spacer()
                 
@@ -221,7 +220,7 @@ struct RealTimeView: View {
                                 Text(traffic.formattedTotalBytes)
                                     .frame(width: 120, alignment: .trailing)
                                     .padding(.horizontal, 8)
-                                    .fontWeight(.semibold)
+                                    .font(.system(size: 13, weight: .semibold))
                                 
                                 Text(String(traffic.processID))
                                     .frame(width: 80, alignment: .trailing)

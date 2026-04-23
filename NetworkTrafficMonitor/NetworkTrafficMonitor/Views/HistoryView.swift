@@ -11,8 +11,7 @@ struct HistoryView: View {
             // 顶部控制栏
             HStack {
                 Text("历史流量统计")
-                    .font(.title)
-                    .fontWeight(.bold)
+                    .font(.system(size: 28, weight: .bold))
                 
                 Spacer()
                 
@@ -40,8 +39,7 @@ struct HistoryView: View {
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                     Text("\(trafficMonitor.historyTraffic.count)")
-                        .font(.title)
-                        .fontWeight(.bold)
+                        .font(.system(size: 28, weight: .bold))
                 }
                 
                 Spacer()
@@ -51,8 +49,7 @@ struct HistoryView: View {
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                     Text(formattedTotalReceived)
-                        .font(.title)
-                        .fontWeight(.bold)
+                        .font(.system(size: 28, weight: .bold))
                         .foregroundColor(.blue)
                 }
                 
@@ -63,8 +60,7 @@ struct HistoryView: View {
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                     Text(formattedTotalSent)
-                        .font(.title)
-                        .fontWeight(.bold)
+                        .font(.system(size: 28, weight: .bold))
                         .foregroundColor(.green)
                 }
             }
@@ -245,7 +241,7 @@ struct HistoryView: View {
                                 Text(history.formattedTotalBytes)
                                     .frame(width: 120, alignment: .trailing)
                                     .padding(.horizontal, 8)
-                                    .fontWeight(.semibold)
+                                    .font(.system(size: 13, weight: .semibold))
                                 
                                 Text(history.formattedDuration)
                                     .frame(width: 100, alignment: .trailing)
